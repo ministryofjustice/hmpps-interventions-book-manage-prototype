@@ -84,7 +84,11 @@
 	    <tbody class="govuk-table__body">
 	      <tr class="govuk-table__row">
 		<td class="govuk-table__cell">{{ referral.probationPractitioner.name }}</td>
-		<td class="govuk-table__cell">{{ intervention.initialAssessment.date }}</td>
+		<td class="govuk-table__cell">
+		  {% if intervention.initialAssessment != null %}
+		    {{ moment(intervention.initialAssessment.date).format("D/M/YYYY") }}
+		  {% endif %}
+		</td>
 		<td class="govuk-table__cell"><strong class="{{ cssClassForInitialAssessmentStatus(intervention.initialAssessmentStatus) }}">{{ intervention.initialAssessmentStatus }}</strong></td>
 		{% if intervention.initialAssessment != null %}
 		  <td class="govuk-table__cell"><a class="govuk-link" href="#">View</a></td>

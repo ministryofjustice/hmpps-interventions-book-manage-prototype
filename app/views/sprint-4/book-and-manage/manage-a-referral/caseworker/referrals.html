@@ -143,7 +143,7 @@
 			{% endif %}
 
 			<td class="govuk-table__cell">{{ intervention.initialAssessment.address }}</td>
-			<td class="govuk-table__cell">{{ intervention.initialAssessment.date }}</td>
+			<td class="govuk-table__cell">{{ moment(intervention.initialAssessment.date).format("D/M/YYYY") }}</td>
 			<td class="govuk-table__cell">{{ intervention.initialAssessment.time }}</td>
 			<td class="govuk-table__cell"><a href="/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/{{referralIndex}}/interventions/{{loop.index0}}/initial-assessment">Edit</a></td>
 		      </tr>

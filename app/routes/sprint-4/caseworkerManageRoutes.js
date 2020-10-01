@@ -289,7 +289,23 @@ router.get("/referrals/:referralIndex/interventions/:interventionIndex/initial-a
 router.post("/referrals/:referralIndex/interventions/:interventionIndex/initial-assessment", (req, res) => {
     const intervention = findIntervention(req);
 
+    const day = parseInt(req.body["date-day"]) - 1; // 0 to 11
+    const month = parseInt(req.body["date-month"]);
+    const year = parseInt(req.body["date-year"]);
+
+    const date = new Date();
+    date.setDate(day);
+    date.setMonth(month);
+    date.setYear(year);
+
     intervention.initialAssessment = req.body;
+    delete intervention.initialAssessment["date-day"];
+    delete intervention.initialAssessment["date-month"];
+    delete intervention.initialAssessment["date-year"];
+    intervention.initialAssessment.date = date;
+    console.log(day, month, year);
+
+    console.log(intervention.initialAssessment);
 
     res.redirect(`/sprint-4/book-and-manage/manage-a-referral/caseworker/referrals/${req.params.referralIndex}/interventions/${req.params.interventionIndex}`);
 });
