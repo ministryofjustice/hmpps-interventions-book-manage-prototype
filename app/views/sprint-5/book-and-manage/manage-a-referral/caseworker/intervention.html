@@ -38,6 +38,47 @@
 	<div class="govuk-tabs__panel" id="intervention-progress">
 	  <h2 class="govuk-heading-xl">Intervention progress</h2>
 
+	  {{ govukAccordion({
+	    id: "accordion-default-2",
+	    items: [
+	      {
+		expanded: true,
+		heading: {
+		  text: "Writing well for the web"
+		},
+		content: {
+		  html: "<p class='govuk-body'>This is the content for Writing well for the web.</p>"
+		}
+	      },
+	      {
+		heading: {
+		  text: "Writing well for specialists"
+		},
+		content: {
+		  html: "<p class='govuk-body'>This is the content for Writing well for specialists.</p>"
+		}
+	      },
+		{
+		expanded: true,
+		heading: {
+		text: "Know your audience",
+		html: "<div class=\"app-accordion-task\"><span class=\"app-accordion-task__title--completed\">Know your audience</span><span class=\"app-accordion-task__status\"><strong class=\"govuk-tag\">Completed</strong></span><div>"
+		},
+		content: {
+		  html: "<p class='govuk-body'>This is the content for Know your audience.</p>"
+		}
+	      },
+		{
+		heading: {
+		  text: "How people read"
+		},
+		content: {
+		  html: "<p class='govuk-body'>This is the content for How people read.</p>"
+		}
+	      }
+	    ]
+	  }) }}
+
 	  <p class="govuk-body">
 	  On this page you can:
 	  </p>

@@ -103,3 +103,19 @@ $govuk-assets-path: '/govuk/assets/';
 .app-information-sidebar {
   background: govuk-colour("light-grey");
 }
+
+.app-accordion-task {
+  display: flex;
+}
+
+.app-accordion-task__status {
+  margin-left: auto;
+}
+
+.app-accordion-task__title--completed {
+  color: govuk-colour("mid-grey");
+}
+
+.app-accordion-task__title--completed:hover {
+  text-decoration-color: pink;
+}
